@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+
 const hospitalRouter = require('./routes/hospitalRouter');
 const medicoHospitalRouter = require('./routes/medicoHospitalRouter');
-const pacienteRouter = require('./routes/pacienteRouter')
+const pacienteRouter = require('./routes/pacienteRouter');
+const tokenRouter = require('./routes/tokenRouter');
+
 const path = require('path');
 const dotenv = require('dotenv');
 
@@ -18,6 +21,7 @@ app.use(express.json());
 app.use('/api/hospital',hospitalRouter);
 app.use('/api/medicoHospital',medicoHospitalRouter);
 app.use('/api/paciente',pacienteRouter);
+app.use('/api/token',tokenRouter);
 
 /*
 *Conexão ao Banco de Dados

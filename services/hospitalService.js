@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 
+
 const HospitalModel = require('../models/HospitalModel.js');
 const { v4: uuidv4 } = require('uuid');
 
@@ -21,8 +22,11 @@ exports.create = async(req,res)=>{
         estado: req.body.estado,
         email:req.body.email,
         senha: req.body.senha,
+       // senha_hash: Bcrypt.hashSync(req.body.senha),
         hospital_id:uuidv4(),
     })
+    
+
     try{
         const data = await lancamento.save();
 
