@@ -4,7 +4,7 @@ const {create, findAll, findOne, update,remove} = require('../services/hospitalS
 const {autenticacao} = require('../middlewares/loginRequired.js');
 
 
-hospitalRouter.post('/',autenticacao,create);
+hospitalRouter.post('/',create);
 hospitalRouter.get('/',autenticacao,findAll);
 hospitalRouter.get('/:id',autenticacao,findOne);
 hospitalRouter.put('/:id',autenticacao,update);

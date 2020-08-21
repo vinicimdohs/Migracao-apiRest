@@ -11,7 +11,8 @@ exports.create = async(req,res)=>{
         nome: req.body.nome,
         especializacao:req.body.especializacao,
         descricao:req.body.descricao,
-        hospital_id:req.body.hospital_id
+        hospital_id:req.body.hospital_id,
+        medico_on:req.body.medico_on
     });
     try{
         const data = await lancamento.save();
