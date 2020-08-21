@@ -50,13 +50,20 @@ exports.findOne = async(req,res)=>{
 }
 
 exports.update = async(req,res)=>{
-    const id = req.params.id;
+    const id = req.userid;
     try{
-        const data = await PacienteModel.findOneAndUpdate(
-            {_id:id},
-            req.body,
-            {new:true}
-            );
+        let data = await PacienteModel.findOne({_id:id});
+
+        if(!data){
+            return res.status(400).json({
+                errors:['Usuário não existe']
+            });
+        }
+
+        const newData = await data.updateOne(req.body);
+
+        data = await PacienteModel.findOne({_id:id});
+        
         res.send(data);
     }catch(e){
         res.status(500).send(e);
@@ -64,7 +71,7 @@ exports.update = async(req,res)=>{
 }
 
 exports.remove = async(req,res)=>{
-    const id = req.params.id;
+    const id = req.userid;
     try{
         const data = await PacienteModel.findByIdAndDelete({_id:id});
         res.send(data);

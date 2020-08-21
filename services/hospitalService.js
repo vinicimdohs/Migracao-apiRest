@@ -57,21 +57,29 @@ exports.findOne = async(req,res)=>{
 }
 
 exports.update = async(req,res)=>{
-    const id = req.params.id;
+    const id = req.userid;
     try{
-        const data = await HospitalModel.findOneAndUpdate(
-            {_id:id},
-            req.body,
-            {new:true}
-            );
+        let data = await HospitalModel.findOne({_id:id});
+
+        if(!data){
+            return res.status(400).json({
+                errors:['Usuário não existe']
+            });
+        }
+
+        const newData = await data.updateOne(req.body);
+
+        data = await HospitalModel.findOne({_id:id});
+
         res.send(data);
     }catch(e){
+        console.log(e);
         res.status(500).send(e);
     }
 }
 
 exports.remove = async(req,res)=>{
-    const id = req.params.id;
+    const id = req.userid;
     try{
         const data = await HospitalModel.findByIdAndDelete({_id:id});
         res.send(data);

@@ -24,8 +24,8 @@
         if(senha != user.senha)return res.status(401).json({
             errors: ['Senha inválida']
         });
-        const{ hospital_id } = user;
-        const token = jwt.sign({hospital_id , email},process.env.TOKEN_SECRET_HOSPITAL,{
+        const{ hospital_id,_id} = user;
+        const token = jwt.sign({hospital_id , email, _id},process.env.TOKEN_SECRET_HOSPITAL,{
             expiresIn: process.env.TOKEN_EXPIRATION
         });
 

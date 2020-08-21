@@ -4,10 +4,17 @@ const {create, findAll, findOne, update,remove} = require('../services/hospitalS
 const {autenticacao} = require('../middlewares/loginRequired.js');
 
 
+//Um hospital não precisa listar os hospitais.
+//para o sistema poder listar os hospitais
+hospitalRouter.get('/',findAll);
+hospitalRouter.get('/:id',findOne);
+
+//um hospital não cria outro hospital,porém na primeira vez ele
+//se cria.
 hospitalRouter.post('/',create);
-hospitalRouter.get('/',autenticacao,findAll);
-hospitalRouter.get('/:id',autenticacao,findOne);
-hospitalRouter.put('/:id',autenticacao,update);
-hospitalRouter.delete('/:id',autenticacao,remove);
+//Somente o hospital logado pode dar update em si mesmo.
+hospitalRouter.put('/',autenticacao,update);
+//Somente um hospital logado, pode se remover.
+hospitalRouter.delete('/',autenticacao,remove);
 
 module.exports = hospitalRouter;
