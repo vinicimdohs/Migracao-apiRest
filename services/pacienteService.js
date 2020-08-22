@@ -13,6 +13,7 @@ exports.create = async(req,res)=>{
         rua:req.body.rua ,
         bairro:req.body.bairro ,
         numero:req.body.numero ,
+        complemento: req.body.complemento,
         cep:req.body.cep ,
         cidade:req.body.cidade ,
         estado:req.body.estado ,

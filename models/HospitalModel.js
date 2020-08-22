@@ -10,6 +10,7 @@ let schema = mongoose.Schema({
     rua:{type: String, required:true},
     bairro:{type: String, required:true},
     numero:{type: String, required:true},
+    complemento:{type:String, required:false},
     cep:{type: String, required:true},
     telefone:{type: String, required:true},
     eqDisponivel:{type: String, required:false},

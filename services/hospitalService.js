@@ -16,6 +16,7 @@ exports.create = async(req,res)=>{
         numero: req.body.numero,
         cep:req.body.cep,
         telefone:req.body.telefone,
+        complemento: req.body.complemento,
         eqDisponivel: req.body.eqDisponivel,
         cnpj:req.body.cnpj,
         cidade:req.body.cidade,

@@ -11,6 +11,7 @@ let schema = mongoose.Schema({
     rua:String,
     bairro:String,
     numero:String,
+    complemento:{type:String, required:false},
     cep:String,
     cidade:String,
     estado:String,

@@ -5,9 +5,13 @@ const {autenticacao} = require('../middlewares/loginRequired.js');
 const {store,findAll,findOne,remove} = require('../services/FotoHospitalService.js');
 //const upload = multer(multerConfig);
 
-fotoMedicoRouter.post('/',autenticacao,store);//medico logado para criar a foto
+//a foto só pode ser postada por um hospital logado
+fotoMedicoRouter.post('/',autenticacao,store);
+
 fotoMedicoRouter.get('/',findAll);
 fotoMedicoRouter.get('/:id',findOne);
-fotoMedicoRouter.delete('/',autenticacao,remove);//medico logado para remover a foto
+
+//a foto só pode ser removida por um hospital logado
+fotoMedicoRouter.delete('/',autenticacao,remove);
 
 module.exports = fotoMedicoRouter;

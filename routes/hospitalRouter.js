@@ -4,7 +4,7 @@ const {create, findAll, findOne, update,remove} = require('../services/hospitalS
 const {autenticacao} = require('../middlewares/loginRequired.js');
 
 
-//Um hospital não precisa listar os hospitais.
+
 //para o sistema poder listar os hospitais
 hospitalRouter.get('/',findAll);
 hospitalRouter.get('/:id',findOne);
