@@ -28,6 +28,6 @@ let schema = mongoose.Schema({
     senha:String,
 })
 
-const PacienteModel = mongoose.model('paciente',schema);
+const PacienteModel = mongoose.model('pacientes',schema);
 
 module.exports = PacienteModel;

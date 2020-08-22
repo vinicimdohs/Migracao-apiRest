@@ -32,7 +32,7 @@ let schema = mongoose.Schema({
 });
 
 
-const HospitalModel = mongoose.model('hospital',schema);
+const HospitalModel = mongoose.model('hospitals',schema);
 
 
 module.exports = HospitalModel;

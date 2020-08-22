@@ -7,6 +7,6 @@ let schema = mongoose.Schema({
     medico_on:Boolean,
 });
 
-const MedicoHospitalModel = mongoose.model('medico_hospital',schema);
+const MedicoHospitalModel = mongoose.model('medico_hospitals',schema);
 
 module.exports = MedicoHospitalModel;
