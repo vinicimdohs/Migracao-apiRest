@@ -12,6 +12,12 @@ let schema = mongoose.Schema({
     medico_id:{
         type:String,
         required:false
+    },
+    _url:{
+        type:String,
+    },
+    hospital_id:{
+        type:String
     }
 });
 
