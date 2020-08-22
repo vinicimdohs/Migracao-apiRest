@@ -6,6 +6,8 @@ const hospitalRouter = require('./routes/hospitalRouter');
 const medicoHospitalRouter = require('./routes/medicoHospitalRouter');
 const pacienteRouter = require('./routes/pacienteRouter');
 const tokenRouter = require('./routes/tokenRouter');
+const fotoMedicoRouter = require('./routes/fotoMedicoRouter');
+const fotoPacienteRouter = require('./routes/fotoPacienteRouter');
 
 const path = require('path');
 const dotenv = require('dotenv');
@@ -22,6 +24,8 @@ app.use('/api/hospital',hospitalRouter);
 app.use('/api/medicoHospital',medicoHospitalRouter);
 app.use('/api/paciente',pacienteRouter);
 app.use('/api/token',tokenRouter);
+app.use('/api/fotoMedico',fotoMedicoRouter);
+app.use('/api/fotoPaciente',fotoPacienteRouter);
 
 /*
 *Conexão ao Banco de Dados

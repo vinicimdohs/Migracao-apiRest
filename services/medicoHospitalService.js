@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 const MedicoHospitalModel = require('../models/MedicoHospitalModel.js');
-
+const FotoMedicoModel = require('../models/FotoMedicoModel');
 
 
 const medicohospital = new MedicoHospitalModel();
