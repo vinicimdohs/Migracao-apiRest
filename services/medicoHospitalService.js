@@ -7,16 +7,19 @@ const FotoMedicoModel = require('../models/FotoMedicoModel');
 const medicohospital = new MedicoHospitalModel();
 
 exports.create = async(req,res)=>{
+
+    //console.log(req);
+    const hospital_id = req.userhospitalid;
     const lancamento = new MedicoHospitalModel({
         nome: req.body.nome,
         especializacao:req.body.especializacao,
         descricao:req.body.descricao,
-        hospital_id:req.body.hospital_id,
+        hospital_id:hospital_id,
         medico_on:req.body.medico_on
     });
     try{
         const data = await lancamento.save();
-
+        
         res.send(data);
     }catch(e){
         res.status(500).send(e);
