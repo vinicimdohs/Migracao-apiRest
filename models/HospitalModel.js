@@ -27,7 +27,7 @@ let schema = mongoose.Schema({
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     //senha_hash:{type:String, required: true},
-    senha:{type: String, virtuals:true},
+    senha:{type: String, required:true,virtuals:true},
     hospital_id:String,
     covid:{type:Boolean,required:true}
 });
