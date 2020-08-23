@@ -2,7 +2,7 @@ const express = require('express');
 const fotoMedicoRouter = express.Router();
 
 const {autenticacao} = require('../middlewares/loginRequired.js');
-const {store,findAll,findOne,remove} = require('../services/FotoHospitalService.js');
+const {store,findAll,findOne,remove} = require('../services/FotoMedicoService.js');
 //const upload = multer(multerConfig);
 
 //a foto só pode ser postada por um hospital logado
