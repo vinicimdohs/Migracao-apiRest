@@ -16,6 +16,7 @@ const upload = multer({storage:storage,fileFilter}).single('img');
 exports.store = async(req,res)=>{
     return upload(req,res,async (err)=>{
         if(err){
+            
             return res.status(400).json({
                 errors: [err.code],
             });
@@ -34,7 +35,7 @@ exports.store = async(req,res)=>{
                 _url:`${url}/images/${filename}`
         });
 
-        
+        console.log(lancamento);
 
         try{
             console.log('teste');

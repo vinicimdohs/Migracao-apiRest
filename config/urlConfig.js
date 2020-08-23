@@ -1,4 +1,4 @@
 exports.urlConfig = ()=>{
-    const url = 'http://localhost:3001'
+    const url = process.env.APP_URL;
     return url;
 };
