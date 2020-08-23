@@ -25,6 +25,7 @@ exports.create = async(req,res)=>{
         senha: req.body.senha,
        // senha_hash: Bcrypt.hashSync(req.body.senha),
         hospital_id:uuidv4(),
+        covid: req.body.covid,
     })
     
 

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 let schema = mongoose.Schema({
     nome:String,
-    especializacao:String,
+    especializacao:{type:String , required:true},
     hospital_id:{type:String , required:true},
     medico_on:{type:Boolean , default: false},
 });
