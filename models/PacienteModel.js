@@ -6,16 +6,16 @@ let validateEmail = function(email) {
 };
 
 let schema = mongoose.Schema({
-    nome:String,
-    sobrenome:String,
-    rua:String,
-    bairro:String,
-    numero:String,
+    nome:{type: String, required:true},
+    sobrenome:{type: String, required:true},
+    rua:{type: String, required:true},
+    bairro:{type: String, required:true},
+    numero:{type: String, required:true},
     complemento:{type:String, required:false},
-    cep:String,
-    cidade:String,
-    estado:String,
-    celular:String,
+    cep:{type: String, required:true},
+    cidade:{type: String, required:true},
+    estado:{type: String, required:true},
+    celular:{type: String, required:true},
     email:{ 
         type: String,
         trim: true,
@@ -25,7 +25,7 @@ let schema = mongoose.Schema({
         validate: [validateEmail, 'Please fill a valid email address'],
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
-    senha:String,
+    senha:{type: String, required:true},
 })
 
 const PacienteModel = mongoose.model('pacientes',schema);

@@ -29,7 +29,7 @@ let schema = mongoose.Schema({
     //senha_hash:{type:String, required: true},
     senha:{type: String, virtuals:true},
     hospital_id:String,
-    covid:Boolean,
+    covid:{type:Boolean,required:true}
 });
 
 
