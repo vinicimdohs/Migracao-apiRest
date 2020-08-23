@@ -4,7 +4,7 @@ let schema = mongoose.Schema({
     nome:String,
     especializacao:String,
     hospital_id:{type:String , required:true},
-    medico_on:Boolean,
+    medico_on:{type:Boolean , default: false},
 });
 
 const MedicoHospitalModel = mongoose.model('medico_hospitals',schema);
